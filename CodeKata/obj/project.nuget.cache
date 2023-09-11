@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "iWHkzwX9rUvVcEPwkMuamLrec/xg678QOcAZBGcQFdCeA1ydWrfuP3XJcmvhcc/P0gV6o5U0HSE2A0Y0aqvc1A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\HP Probook 650 G4\\source\\repos\\CodeKata\\CodeKata\\CodeKata.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\HP Probook 650 G4\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

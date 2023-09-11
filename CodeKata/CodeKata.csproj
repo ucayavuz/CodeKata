@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CodeKata.Case1\CodeKata.Case1.csproj" />
+    <ProjectReference Include="..\CodeKata.Case2\CodeKata.Case2.csproj" />
+  </ItemGroup>
+
+</Project>
