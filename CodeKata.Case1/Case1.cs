@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Collections.Generic;
+using System.Text;
 
 namespace CodeKata.Case1
 {
@@ -7,8 +8,13 @@ namespace CodeKata.Case1
 
         public void Execute()
         {
-
             var dt1 = DateTime.Now;
+
+            // Verilen küme
+
+            // Algoritma verilen kümeyi kulanarak ve DateTime (Yıl ,Ay,Gün,Saat,Dakika,Saniye) paternini kullanarak unique üretiyor.
+
+            // Yıl --> 1 bit  Ay --> 1 bit Gün --> 1 bit Saat --> 1 bit Dakika --> 2 bit Saniye --> 2 bit  = 8 bitlik Code
 
             char[] arr = { 'A', 'C', 'D', 'E', 'F', 'G', 'H', 'K', 'L', 'M', 'N', 'P', 'R', 'T', 'X', 'Y', 'Z', '2', '3', '4', '5', '7', '9' };
 
@@ -23,13 +29,16 @@ namespace CodeKata.Case1
                 Console.WriteLine($"Üretilen Code: {res} Uzunluk: {res.Length}");
                 list.Add(res);
             }
-            Console.WriteLine("\n" + "**Program Çıktı Sonucu**" + "\n");
-            Console.WriteLine($"Üretilen Unique Adedi: {list.Count}");
-            Console.WriteLine($"Benzersiz olan Unique Adedi: {list.Distinct().Count()}");
+
+            // Sonuçlar
+
+            GetResults(list);
+
             Console.WriteLine($"Program {(DateTime.Now - dt1).TotalSeconds} saniye kadar sürdü");
         }
         private string CheckCodeForMin(string a, char[] arr)
         {
+            // index lerinin herhagi bir önemi yok rastgele seçilmiştir çeşitliliği sağlamak amaçlıdır
             var sb = new StringBuilder(a);
             sb.Replace('1', arr[1]);
             sb.Replace('6', arr[3]);
@@ -41,6 +50,8 @@ namespace CodeKata.Case1
         }
         private string CheckCodeForSecond(string a, char[] arr)
         {
+            // index lerinin herhagi bir önemi yok rastgele seçilmiştir çeşitliliği sağlamak amaçlıdır
+
             var sb = new StringBuilder(a);
             sb.Replace('1', arr[2]);
             sb.Replace('6', arr[4]);
@@ -79,6 +90,13 @@ namespace CodeKata.Case1
             //Console.WriteLine($"Üretilen Unique: {result}  - {result.Length}");
 
             return result;
+        }
+
+        private void GetResults(List<string> list)
+        {
+            Console.WriteLine("\n" + "**Program Çıktı Sonucu**" + "\n");
+            Console.WriteLine($"Üretilen Unique Adedi: {list.Count}");
+            Console.WriteLine($"Benzersiz olan Unique Adedi: {list.Distinct().Count()}");
         }
     }
 }
