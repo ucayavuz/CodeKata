@@ -62,10 +62,23 @@ namespace CodeKata.Case2
 
                 resultModel.Index = index;
                 resultModel.SameItems.Add(sameRow);
-                resultModels.Add(resultModel);
+                if (!resultModels.Any(x => x.Index == index))
+                {
+                    resultModels.Add(resultModel);
+                }
+                else
+                {
+                    var rsltMdl = resultModels.FirstOrDefault(x => x.Index == index);
+
+                    if (rsltMdl != null)
+                        resultModels.Remove(rsltMdl);
+
+                    resultModels.Add(resultModel);
+
+                }
             }
 
-            foreach (var item in resultModels.Distinct().OrderBy(x => x.Index))
+            foreach (var item in resultModels.OrderBy(x => x.Index))
             {
                 string row = "";
 
