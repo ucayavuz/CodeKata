@@ -20,14 +20,17 @@ namespace CodeKata.Case1
 
             var dateTimeNow = DateTime.Now;
             List<string> list = new List<string>();
-
-            for (int i = 0; i < 10000; i++)
+            for (int j = 0; j < 23; j++)
             {
-                dateTimeNow = dateTimeNow.AddMinutes(1).AddSeconds(1);
-                string res = GenerateCode(dateTimeNow, arr);
+                for (int i = 0; i < 70000; i++)
+                {
+                    dateTimeNow = dateTimeNow.AddMinutes(1).AddSeconds(1);
+                    string res = GenerateCode(dateTimeNow, arr);
 
-                Console.WriteLine($"Üretilen Code: {res} Uzunluk: {res.Length}");
-                list.Add(res);
+                    //Console.WriteLine($"Üretilen Code: {res} Uzunluk: {res.Length}");
+                    list.Add(res);
+                }
+                dateTimeNow = dateTimeNow.AddYears(1);
             }
 
             // Sonuçlar
